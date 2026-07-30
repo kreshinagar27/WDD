@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+</head>
+<body>
+    <h1>Student Registration Form</h1>
+    <hr>
+    <form action="#" method="post">
+        <label for="full name">Full Name:</label>
+        <input type="text" id="full name" name="full name" placeholder="Enter your full name" required>
+        <br><br>
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" placeholder="example@email.com" required>
+        <br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" minlength="6" required>
+        <br><br>
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="10-digit phone number" required>
+        <br><br>
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required>
+        <br><br>
+        <label>Gender:</label>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label>
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="other">Other</label>
+        <br><br>
+        <label for="course">Course:</label>
+        <select id="course" name="course" required>
+            <option value="">--Select a course--</option>
+            <option value="B-TECH">B-TECH</option>
+            <option value="BCA">BCA</option>
+            <option value="BSC">BSC</option>
+            <option value="M-TECH">M-TECH</option>
+            <option value="MSC">MSC</option>
+        </select>
+        <br><br>
+        <label>Skills:</label>
+        <input type="checkbox" id="java" name="skills" value="Java">
+        <label for="java">Java</label>
+        <input type="checkbox" id="python" name="skills" value="Python">
+        <label for="python">Python</label>
+        <input type="checkbox" id="c++" name="skills" value="C++">
+        <label for="c++">C++</label>
+        <input type="checkbox" id="javascript" name="skills" value="JavaScript">
+        <label for="javascript">JavaScript</label>
+        <br><br>
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" rows="4" cols="40" placeholder="Enter your address"></textarea>
+        <br><br>
+        <label for="photo">Photo:</label>
+        <input type="file" id="photo" name="photo" accept="image/*">
+        <br><br>
+        <label for="website">Personal Website:</label>
+        <input type="url" id="website" name="website" placeholder="https://example.com">
+        <br><br>
+        <label for="favcolor">Favorite Color:</label>
+        <input type="color" id="favcolor" name="favcolor">
+        <br><br>
+        <label for="admission">Admission Date:</label>
+        <input type="date" id="admission" name="admission" required>
+        <br><br>
+        <label for="study time">Study Time:</label>
+        <input type="time" id="study time" name="study time">
+        <br><br>
+        <input type="checkbox" id="agree" name="agree" required>
+        <label for="agree">I agree to the terms and conditions</label>
+        <br><br>
+        <input type="submit" value="Register">
+        <input type="reset" value="Reset">
+    </form>
+</body>
+</html>
