@@ -1,80 +1,156 @@
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS Types Demonstration</title>
+    <title>My Goal & Future</title>
+
     <link rel="stylesheet" href="style.css">
-    <style>
-        body{
-            background-color: #f4f6f8;
-            font-family: Arial, Helvetica, sans-serif;
-            margin: 0;
-        }
-
-        .internal_section {
-            background-color: white;
-            width: 80%;
-            margin: 30px auto;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgpa(0,0,0,0.1);            
-        }
-
-        .internal_section h2{
-            color: #8e44ad;
-            text-align: center;
-        }
-
-        .internal_section p{
-            font-size: 18px;
-            line-height: 1.6;
-            color: #444;
-        }
-
-        .internal_box {
-            background-color: #e8daef;
-            padding: 20px;
-            border-left: 6px solid #8e44ad;
-            margin-top: 15px;
-        }
-    </style>
 </head>
+
 <body>
-    
-    <header style="
-        background-color: #1f4e79;
-        color: white;
-        text-align: center;
-        padding: 30px;
-    ">
-        <h1 style="font-size: 40px;margin: 0;">
-            CSS Types Demonstration
-        </h1>
 
-        <p style="font-size: 18px;">
-            Inline, Internal and External CSS
-        </p>
+    <header>
+        <h1>🚀 My Goal & Future</h1>
+
+        <nav>
+            <a href="#home">🏠 Home</a>
+            <a href="#about">👨‍💻 About Me</a>
+            <a href="#interests">💡 Interests</a>
+            <a href="#skills">🛠️ Skills</a>
+            <a href="#goals">🎯Goals</a>
+        </nav>
     </header>
-    <section class="internal_section">
-        <h2>2. Internal CSS</h2>
-        <p>
-            The Styling of this section is written inside the &lt;style&gt; tag in the HTML document. 
-        </p>
-        <div class="internal_box">
-            This box is styled using Internal CSS.
+
+
+    <section id="home" class="home">
+
+        <div class="hero-content">
+
+            <div class="hero-text">
+                <p class="welcome">✨ Welcome to My Website</p>
+
+                <h2>Learning Today,<br>Building My Future </h2>
+
+                <p>
+                    Welcome to my personal webpage! This website tells a little
+                    about me, my interests, my skills and the goals I want to
+                    achieve in the future.
+                </p>
+
+                <a href="#about" class="button">Know More →</a>
+            </div>
+
+            <div class="hero-image">
+            <img src="image.jpg" alt="Future technology and coding">
+    </div>
+
         </div>
+
     </section>
 
-    <section class="external_section">
-        <h2>3. External CSS</h2>
+
+    <section id="about">
+
+        <h2>👨‍💻 About Me</h2>
+
         <p>
-            the styling of this section is defined in an External CSS file.
+            Hello! I am a BTech student who enjoys learning new things and
+            improving my knowledge. I am especially interested in
+            computers and technology.
         </p>
-        <div class="external_box">
-            This box is styled using External CSS.
-        </div>
-    </section>
+
+        <p>
+            I believe that learning takes time and practice. I am
+            currently learning the basics of web development using
+            HTML and CSS, and I hope to learn more in the future. 
+        </p>
 
     </section>
+
+
+    <section id="interests">
+
+        <h2>💡 My Interests</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="card-icon">💻</div>
+                <h3>Technology</h3>
+                <p>
+                    I like learning about computers, websites and new
+                    technologies that can make our lives easier.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">📚</div>
+                <h3>Learning</h3>
+                <p>
+                    I enjoy learning new topics and gaining knowledge
+                    that can help me in my studies and future career.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🎨</div>
+                <h3>Creativity</h3>
+                <p>
+                    I like creating new ideas and trying to make things
+                    better using my own thoughts and skills.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section id="skills">
+
+        <h2>🛠️ My Skills</h2>
+
+        <div class="skills-list">
+
+            <div>🌐 HTML</div>
+            <div>🎨 CSS</div>
+            <div>☕ Java</div>
+            <div>⚙️ C</div>
+            <div>🧠 DSA</div>
+
+        </div>
+
+    </section>
+
+
+    <section id="goals">
+
+        <h2>🎯 My Future Goals</h2>
+
+        <p>
+            I have some goals that I want to achieve by working hard
+            and learning continuously. 
+        </p>
+
+        <ul>
+            <li>Become better at web development</li>
+            <li>Learn more programming languages</li>
+            <li>Create useful projects</li>
+            <li>Improve my problem-solving skills</li>
+            <li>Prepare myself for a good career</li>
+        </ul>
+
+    </section>
+
+
+    <footer>
+
+        <p>💻 Made by <strong>Kreshi Nagar</strong> using HTML & CSS</p>
+        <p>© 2026 My Goal & Future | Keep Learning 🚀</p>
+
+    </footer>
+
 </body>
 </html>
