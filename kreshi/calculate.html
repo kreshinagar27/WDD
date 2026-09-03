@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate</title>
+</head>
+
+<body>
+
+    <label>Number 1</label>
+    <input type="number" id="number1" placeholder="Enter Number 1">
+
+    <br><br>
+
+    <label>Number 2</label>
+    <input type="number" id="number2" placeholder="Enter Number 2">
+
+    <br><br>
+
+    <button onclick="calculateAddition()">+</button>
+    <button onclick="calculateSubtraction()">-</button>
+    <button onclick="calculateDivision()">/</button>
+    <button onclick="calculateMultiplication()">*</button>
+
+    <p id="result"></p>
+
+    <script>
+        function getNumbers() {
+            let number1 = Number(document.getElementById("number1").value);
+            let number2 = Number(document.getElementById("number2").value);
+
+            return [number1, number2];
+        }
+
+        function calculateAddition() {
+            let [number1, number2] = getNumbers();
+            let addition = number1 + number2;
+
+            document.getElementById("result").innerHTML =
+                "Addition = " + addition;
+        }
+
+        function calculateSubtraction() {
+            let [number1, number2] = getNumbers();
+            let subtraction = number1 - number2;
+
+            document.getElementById("result").innerHTML =
+                "Subtraction = " + subtraction;
+        }
+
+        function calculateDivision() {
+            let [number1, number2] = getNumbers();
+
+            if (number2 === 0) {
+                document.getElementById("result").innerHTML =
+                    "Cannot divide by zero.";
+                return;
+            }
+
+            let division = number1 / number2;
+
+            document.getElementById("result").innerHTML =
+                "Division = " + division.toFixed(2);
+        }
+
+        function calculateMultiplication() {
+            let [number1, number2] = getNumbers();
+            let multiplication = number1 * number2;
+
+            document.getElementById("result").innerHTML =
+                "Multiplication = " + multiplication;
+        }
+    </script>
+
+</body>
+</html>
