@@ -1,0 +1,156 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Calculator Registration</title> </head> <body>
+<h2>Calculator Registration</h2>
+
+<label>Name</label>
+<input type="text" id="name" placeholder="Enter your name">
+
+<br><br>
+
+<label>Email</label>
+<input type="email" id="email" placeholder="Enter your email">
+
+<br><br>
+
+<label>Password</label>
+<input type="password" id="password" placeholder="Enter password">
+
+<br><br>
+
+<button onclick="register()">Register</button>
+
+<p id="message"></p>
+
+<hr>
+
+<h2>Calculator</h2>
+
+<label>Number 1</label>
+<input type="number" id="number1" placeholder="Enter Number 1">
+
+<br><br>
+
+<label>Number 2</label>
+<input type="number" id="number2" placeholder="Enter Number 2">
+
+<br><br>
+
+<button onclick="calculateAddition()">+</button>
+<button onclick="calculateSubtraction()">-</button>
+<button onclick="calculateDivision()">/</button>
+<button onclick="calculateMultiplication()">*</button>
+
+<p id="result"></p>
+
+<script>
+
+    let isRegistered = false;
+
+    function register() {
+
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+
+        if (name === "" || email === "" || password === "") {
+
+            document.getElementById("message").innerHTML =
+                "Please fill all registration fields.";
+
+            return;
+        }
+
+        isRegistered = true;
+
+        document.getElementById("message").innerHTML =
+            "Registration successful! Welcome " + name;
+    }
+
+
+    function getNumbers() {
+
+        if (!isRegistered) {
+            document.getElementById("result").innerHTML =
+                "Please register first.";
+            return null;
+        }
+
+        let number1 =
+            Number(document.getElementById("number1").value);
+
+        let number2 =
+            Number(document.getElementById("number2").value);
+
+        return [number1, number2];
+    }
+
+
+    function calculateAddition() {
+
+        let numbers = getNumbers();
+
+        if (numbers === null) return;
+
+        let [number1, number2] = numbers;
+
+        let addition = number1 + number2;
+
+        document.getElementById("result").innerHTML =
+            "Addition = " + addition;
+    }
+
+
+    function calculateSubtraction() {
+
+        let numbers = getNumbers();
+
+        if (numbers === null) return;
+
+        let [number1, number2] = numbers;
+
+        let subtraction = number1 - number2;
+
+        document.getElementById("result").innerHTML =
+            "Subtraction = " + subtraction;
+    }
+
+
+    function calculateDivision() {
+
+        let numbers = getNumbers();
+
+        if (numbers === null) return;
+
+        let [number1, number2] = numbers;
+
+        if (number2 === 0) {
+
+            document.getElementById("result").innerHTML =
+                "Cannot divide by zero.";
+
+            return;
+        }
+
+        let division = number1 / number2;
+
+        document.getElementById("result").innerHTML =
+            "Division = " + division.toFixed(2);
+    }
+
+
+    function calculateMultiplication() {
+
+        let numbers = getNumbers();
+
+        if (numbers === null) return;
+
+        let [number1, number2] = numbers;
+
+        let multiplication = number1 * number2;
+
+        document.getElementById("result").innerHTML =
+            "Multiplication = " + multiplication;
+    }
+
+</script>
+
+</body> </html>
