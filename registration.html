@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+
+    <style>
+        #result {
+            margin-top: 30px;
+            padding: 20px;
+            border: 2px solid black;
+            width: 500px;
+            background-color: #f5f5f5;
+        }
+
+        #result h2 {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Student Registration Form</h1>
+
+    <nav>
+        <a href="index.html">Home</a> |
+        <a href="courses.html">Courses</a> |
+        <a href="gallery.html">Gallery</a> |
+        <a href="registration.html">Registration</a>
+    </nav>
+
+    <hr>
+
+    <form id="registrationForm">
+
+        <label for="fullname">Full Name:</label>
+        <input type="text" id="fullname" name="fullname"
+               placeholder="Enter your full name" required>
+        <br><br>
+
+        <label for="email">Email address:</label>
+        <input type="email" id="email" name="email"
+               placeholder="example@email.com" required>
+        <br><br>
+
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone"
+               pattern="[0-9]{10}"
+               placeholder="10 digit number" required>
+        <br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password"
+               minlength="6" maxlength="10" required>
+        <br><br>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required>
+        <br><br>
+
+        <label>Gender:</label>
+
+        <input type="radio" id="male" name="gender" value="Male">
+        <label for="male">Male</label>
+
+        <input type="radio" id="female" name="gender" value="Female">
+        <label for="female">Female</label>
+
+        <input type="radio" id="other" name="gender" value="Other">
+        <label for="other">Other</label>
+
+        <br><br>
+
+        <label for="course">Course:</label>
+
+        <select id="course" name="course" required>
+            <option value="">--Select Course--</option>
+            <option value="BCA">BCA</option>
+            <option value="B.TECH">B.TECH</option>
+            <option value="B.Sc">B.Sc</option>
+            <option value="MCA">MCA</option>
+            <option value="M.Tech">M.Tech</option>
+        </select>
+
+        <br><br>
+
+        <label>Skills:</label>
+
+        <input type="checkbox" id="html" name="skills" value="HTML">
+        <label for="html">HTML</label>
+
+        <input type="checkbox" id="java" name="skills" value="JAVA">
+        <label for="java">JAVA</label>
+
+        <br><br>
+
+        <label for="address">Address:</label>
+        <textarea name="address" id="address"
+                  rows="4" cols="40"
+                  placeholder="Enter your address"></textarea>
+
+        <br><br>
+
+        <label for="photo">Upload photo:</label>
+        <input type="file" name="photo" id="photo" accept="image/*">
+
+        <br><br>
+
+        <label for="favcolor">Favourite Colour:</label>
+        <input type="color" name="favcolor" id="favcolor">
+
+        <br><br>
+
+        <label for="admission">Admission Month:</label>
+        <input type="month" name="admission" id="admission">
+
+        <br><br>
+
+        <label for="studytime">Preferred Study Time:</label>
+        <input type="time" name="studytime" id="studytime">
+
+        <br><br>
+
+        <input type="checkbox" id="agree" required>
+        <label for="agree">I agree to the terms and conditions</label>
+
+        <br><br>
+
+        <input type="submit" value="Register">
+        <input type="reset" value="Clear Form">
+
+    </form>
+
+
+    <!-- Information will appear here -->
+    <div id="result"></div>
+
+
+    <script>
+
+
+        const form = document.getElementById("registrationForm");
+
+        form.addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            const fullname = document.getElementById("fullname").value;
+            const email = document.getElementById("email").value;
+            const phone = document.getElementById("phone").value;
+            const password = document.getElementById("password").value;
+            const dob = document.getElementById("dob").value;
+
+            const gender = document.querySelector(
+                'input[name="gender"]:checked'
+            );
+
+            const course = document.getElementById("course").value;
+
+            const skills = [];
+
+            document.querySelectorAll(
+                'input[name="skills"]:checked'
+            ).forEach(function(skill) {
+                skills.push(skill.value);
+            });
+
+            const address = document.getElementById("address").value;
+
+            const photo = document.getElementById("photo").files[0];
+
+            let photoName = "No photo selected";
+
+            if (photo) {
+                photoName = photo.name;
+            }
+
+            const favcolor = document.getElementById("favcolor").value;
+
+            const admission = document.getElementById("admission").value;
+
+            const studytime = document.getElementById("studytime").value;
+
+
+            document.getElementById("result").innerHTML = `
+
+                <h2>Registration Details</h2>
+
+                <p><strong>Full Name:</strong> ${fullname}</p>
+
+                <p><strong>Email:</strong> ${email}</p>
+
+                <p><strong>Phone:</strong> ${phone}</p>
+
+                <p><strong>Password:</strong> ${password}</p>
+
+                <p><strong>Date of Birth:</strong> ${dob}</p>
+
+                <p><strong>Gender:</strong>
+                    ${gender ? gender.value : "Not selected"}
+                </p>
+
+                <p><strong>Course:</strong> ${course}</p>
+
+                <p><strong>Skills:</strong>
+                    ${skills.length > 0 ? skills.join(", ") : "None selected"}
+                </p>
+
+                <p><strong>Address:</strong> ${address}</p>
+
+                <p><strong>Photo:</strong> ${photoName}</p>
+
+                <p><strong>Favourite Colour:</strong>
+                    <span style="
+                        display:inline-block;
+                        width:30px;
+                        height:20px;
+                        background:${favcolor};
+                        border:1px solid black;
+                    "></span>
+                    ${favcolor}
+                </p>
+
+                <p><strong>Admission Month:</strong>
+                    ${admission || "Not selected"}
+                </p>
+
+                <p><strong>Preferred Study Time:</strong>
+                    ${studytime || "Not selected"}
+                </p>
+
+                <p><strong>Terms:</strong> Agreed</p>
+
+            `;
+
+        });
+
+    </script>
+
+</body>
+</html>
