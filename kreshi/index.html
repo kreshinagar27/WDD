@@ -1,21 +1,76 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>circle area calculator</title>
+    <title>Student Grading System</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h2>calculate area of a circle</h2>
-    <label>Enter Radius:</label>
-    <input type="number" id="radius" placeholder="Enter Radius">
-    <button onclick="calculateArea()">Calculate</button>
-    <p id="result"></p>
-    <script>
-        function calculateArea() {
-        let radius = document.getElementById("radius").value;
-        let area = Math.PI * radius * radius;
-        document.getElementById("result").innerHTML = "Area of the circle = " +area.toFixed(2);
-        }
-    </script>
+    <a href="calculator.html">Calculate Marks</a>
+    
+    <div class="container">
+        <img src="books.jpeg" alt="Grading Background">
+        <div class="Grades">
+            <h1>Grading Criteria</h1>
+            <p>Calculate your overall grade for 6 subjects and know how your grades are calculated.</p>
+        </div>
+    </div>
+
+    <table border="1" cellpadding="10" cellspacing="0" align="center" style="width: 80%; margin: 20px auto; border-collapse: collapse;">
+        <tr style="background-color: blue; color: white;">
+            <th>Percentage Range</th>
+            <th>Letter Grade</th>
+            <th>Grade Point</th>
+            <th>Performance Level</th>
+        </tr>
+        <tr style="background-color: rgb(195, 118, 40);" align="center">
+            <td>90 - 100%</td>
+            <td>A+</td>
+            <td>4.0</td>
+            <td>Outstanding</td>
+        </tr>
+        <tr style="background-color: rgb(235, 238, 144);" align="center">
+            <td>80 - 89%</td>
+            <td>A</td>
+            <td>3.6</td>
+            <td>Excellent</td>
+        </tr>
+        <tr style="background-color: lightyellow;" align="center">
+            <td>70 - 79%</td>
+            <td>B</td>
+            <td>3.0</td>
+            <td>Very Good</td>
+        </tr>
+        <tr style="background-color: lightyellow;" align="center">
+            <td>60 - 69%</td>
+            <td>C</td>
+            <td>2.0</td>
+            <td>Good</td>
+        </tr>
+        <tr style="background-color: rgb(255, 211, 182);" align="center">
+            <td>50 - 59%</td>
+            <td>D</td>
+            <td>1.0</td>
+            <td>Pass</td>
+        </tr>
+        <tr style="background-color: rgb(240, 163, 128);" align="center">
+            <td>0 - 49%</td>
+            <td>F</td>
+            <td>0.0</td>
+            <td>Fail</td>
+        </tr>
+    </table>
+
+    <div style="width: 80%; margin: 20px auto;">
+        <b>Important Note:</b>
+        <ul>
+            <li>Total Marks = Internal Marks + External Marks (out of 100).</li>
+            <li>Grades are assigned based on the total percentage.</li>
+            <li>You must score at least 50% to pass the course.</li>
+            <li>Internal and external marks carry equal weightage in this system.</li>
+            <li>This grading system is applicable for all courses.</li>
+        </ul>
+    </div>
 </body>
 </html>
